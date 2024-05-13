@@ -1,12 +1,15 @@
 #include <QApplication>
 #include <QTranslator>
 #include <QQmlApplicationEngine>
+#include <QQuickWindow>
 #include "DataModel/Theme.h"
 #include "Helpers/logger.h"
 #include "ViewModel/MainVM.h"
 
 int main(int argc, char *argv[])
 {
+    QQuickWindow::setSceneGraphBackend("software");
+
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
 
