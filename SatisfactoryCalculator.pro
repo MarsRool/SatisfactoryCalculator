@@ -48,7 +48,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    Style/stylesheet.qss \
     View/Controls/CustomButton.qml \
     View/Controls/CustomComboBox.qml \
     View/Controls/CustomHorizontalHeaderView.qml \
@@ -72,12 +71,9 @@ HEADERS += \
     DataModel/Recipe.h \
     DataModel/Resource.h \
     DataModel/Theme.h \
-    Helpers/customexception.h \
     Helpers/logger.h \
     Logic/Calculator.h \
     Logic/FactorySerializer.h \
-    Style/DarkStyle.h \
-    Style/StyleManager.h \
     ViewModel/CalculatorVM.h \
     ViewModel/FactoryVM.h \
     ViewModel/FileVM.h \
@@ -92,11 +88,9 @@ SOURCES += \
     DataModel/Production.cpp \
     DataModel/Recipe.cpp \
     DataModel/Resource.cpp \
-    Helpers/customexception.cpp \
     Helpers/logger.cpp \
     Logic/Calculator.cpp \
     Logic/FactorySerializer.cpp \
-    Style/DarkStyle.cpp \
     ViewModel/CalculatorVM.cpp \
     ViewModel/FactoryVM.cpp \
     ViewModel/FileVM.cpp \
