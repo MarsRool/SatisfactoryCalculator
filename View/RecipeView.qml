@@ -17,6 +17,7 @@ ListView
     model: root.recipeListModel ? root.recipeListModel : []
 
     height: contentItem.childrenRect.height
+    interactive: false
 
     delegate: RowLayout
     {

@@ -11,6 +11,8 @@ Item
     property var factoryModel: null
     property real fontPointSize: 8
 
+    Component.onCompleted: positionViewAtEnd()
+
     ProductionListContent
     {
         id: rootList

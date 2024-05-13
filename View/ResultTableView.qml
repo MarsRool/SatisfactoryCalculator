@@ -12,7 +12,7 @@ Item
     property real fontPointSize: 8
 
     property int removeResourceColumnWidth: 100
-    property int elementWidth: tableView.columns > 1 ? (root.width - removeResourceColumnWidth) / (tableView.columns - 1) : 200
+    property int elementWidth: tableView.columns > 1 ? (root.width - removeResourceColumnWidth) / (tableView.columns - 1) - 1 : 200
     property int elementHeight: 50
 
     CustomHorizontalHeaderView
@@ -40,6 +40,8 @@ Item
         clip: true
         columnSpacing: 1
         rowSpacing: 1
+
+        boundsBehavior: Flickable.StopAtBounds
 
         model: calculatorModel != null ? calculatorModel : {}
 
