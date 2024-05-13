@@ -75,7 +75,7 @@ bool RecipeVM::setData(const QModelIndex &index, const QVariant &value, int role
         }
         break;
     case RecipeVMRoles::RecipeCountRole:
-        if (auto typedValue = value.toInt(&success); success)
+        if (auto typedValue = value.toDouble(&success); success)
         {
             if (typedValue != item.count)
             {

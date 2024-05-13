@@ -51,13 +51,13 @@ QVariant CalculatorVM::data(const QModelIndex &index, int role) const
         case 0:
             return ResourceNameById(item.resourceId);
         case 1:
-            return QString::number(item.consumption);
+            return QString::number(item.consumption, 'f', 2);
         case 2:
-            return QString::number(item.production);
+            return QString::number(item.production, 'f', 2);
         case 3:
-            return QString::number(item.result);
+            return QString::number(item.result, 'f', 2);
         case 4:
-            return QString("%1%").arg(QString::number(item.efficiency * 100));
+            return QString("%1%").arg(QString::number(item.efficiency * 100, 'f', 2));
         }
         break;
     }

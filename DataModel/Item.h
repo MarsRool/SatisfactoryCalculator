@@ -15,5 +15,5 @@ struct Item
 
     int resourceId = -1;
 
-    int count = 0;
+    double count = 0.0;
 };

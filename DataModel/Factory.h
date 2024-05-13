@@ -12,11 +12,11 @@ struct ProductionResult
 {
     int resourceId = -1;
 
-    int production = 0;
+    double production = 0;
 
-    int consumption = 0;
+    double consumption = 0;
 
-    int result = 0;
+    double result = 0;
 
     double efficiency = 1.0;
 };

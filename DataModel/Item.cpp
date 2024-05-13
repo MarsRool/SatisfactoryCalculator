@@ -14,7 +14,7 @@ bool Item::fromJson(const QJsonObject &json, Item &item)
     {
         return false;
     }
-    item.count = count.toInt();
+    item.count = count.toDouble();
 
     return true;
 }

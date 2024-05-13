@@ -24,7 +24,7 @@ void Calculator::calculate()
                     factory.productionResults.emplace(input.resourceId, ProductionResult{ input.resourceId });
                 }
 
-                int deltaConsumption = static_cast<int>(std::round(input.count * production.count * production.overclocking));
+                double deltaConsumption = input.count * production.count * production.overclocking;
                 factory.productionResults[input.resourceId].consumption += deltaConsumption;
                 factory.productionResults[input.resourceId].result -= deltaConsumption;
             }
@@ -39,7 +39,7 @@ void Calculator::calculate()
                     factory.productionResults.emplace(output.resourceId, ProductionResult{ output.resourceId });
                 }
 
-                int deltaProduction = static_cast<int>(std::round(output.count * production.count * production.overclocking));
+                double deltaProduction = output.count * production.count * production.overclocking;
                 factory.productionResults[output.resourceId].production += deltaProduction;
                 factory.productionResults[output.resourceId].result += deltaProduction;
             }
@@ -48,7 +48,7 @@ void Calculator::calculate()
 
     for (auto& [id, productionResult] : factory.productionResults)
     {
-        productionResult.efficiency = productionResult.consumption != 0
-            ? std::clamp(static_cast<double>(productionResult.production) / productionResult.consumption, 0.0, 1.0) : 1.0;
+        productionResult.efficiency = !qFuzzyIsNull(productionResult.consumption)
+            ? std::clamp(productionResult.production / productionResult.consumption, 0.0, 1.0) : 1.0;
     }
 }
